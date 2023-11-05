@@ -1,6 +1,13 @@
 -- Auther: Abdulsalam Aldahir 
 -- GitHub: Zerox13
-
+require('telescope').setup{
+    defaults = { 
+        file_ignore_patterns = {
+            "build",
+            "node_modules"
+        },
+    }
+}
 local builtin = require('telescope.builtin')
 
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})

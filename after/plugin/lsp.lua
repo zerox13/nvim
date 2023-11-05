@@ -1,5 +1,7 @@
 local lsp = require("lsp-zero")
 
+
+
 lsp.preset("recommended")
 
 lsp.ensure_installed({
@@ -19,6 +21,17 @@ lsp.configure('lua_ls', {
 	}
 })
 
+-- Cpp and esp config
+local lspconfig = require('lspconfig')
+-- Enable some language servers with the additional completion capabilities offered by nvim-cmp
+
+lspconfig.clangd.setup{
+        cmd = {
+                "clangd",
+                '--query-driver=/home/noah/.espressif/tools/xtensa-esp32-elf/esp-2021r2-patch3-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc',
+        },
+        filetypes = {"c", "cpp"},
+}
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
