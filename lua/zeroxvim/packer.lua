@@ -84,5 +84,10 @@ return require('packer').startup(function(use)
 
     -- languages stuff
     use 'udalov/kotlin-vim'
+    
+    -- for rust
+    use 'simrat39/rust-tools.nvim'
+
+    use 'fei6409/log-highlight.nvim'
 
 end)

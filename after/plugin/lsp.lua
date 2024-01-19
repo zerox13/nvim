@@ -6,7 +6,6 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
 	'tsserver',
-	'clangd',
 	'pyright'
 })
 
@@ -21,14 +20,14 @@ lsp.configure('lua_ls', {
 	}
 })
 
+-- SHouldnt this use the lsp variable? TODO: test this when we work on cpp again
 -- Cpp and esp config
 local lspconfig = require('lspconfig')
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 
 lspconfig.clangd.setup{
         cmd = {
-                "clangd",
-                '--query-driver=/home/noah/.espressif/tools/xtensa-esp32-elf/esp-2021r2-patch3-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc',
+            "clangd",
         },
         filetypes = {"c", "cpp"},
 }
