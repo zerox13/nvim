@@ -31,6 +31,6 @@ end)
 
 -- LaTeX maps 
 vim.keymap.set("n", "<leader>lc", ":! pdflatex main.tex <CR><CR>")
-vim.keymap.set("n", "<leader>lv", ":! okular main.pdf & disown <CR><CR>")
+vim.keymap.set("n", "<leader>lv", ":! open main.pdf & disown <CR><CR>")
 
 
