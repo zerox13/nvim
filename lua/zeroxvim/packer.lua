@@ -8,8 +8,7 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.1',
-        -- or                            , branch = '0.1.x',
+        'nvim-telescope/telescope.nvim',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
@@ -34,7 +33,6 @@ return require('packer').startup(function(use)
 
     use {
         'VonHeikemen/lsp-zero.nvim',
-        branch = 'v1.x',
         requires = {
             -- LSP Support
             { 'neovim/nvim-lspconfig' },
@@ -77,10 +75,16 @@ return require('packer').startup(function(use)
         requires = "nvim-tree/nvim-web-devicons",
     }
 
-    use {
-        'jose-elias-alvarez/null-ls.nvim', -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
-        requires = { { 'nvim-lua/plenary.nvim' } }
-    }
+    use({
+      "stevearc/conform.nvim",
+      config = function()
+        require("conform").setup()
+      end,
+    })
+   --  use {
+   --     "nvimtools/none-ls.nvim"
+   --     requires = { { 'nvim-lua/plenary.nvim' } }
+   -- }
 
     -- languages stuff
     use 'udalov/kotlin-vim'
@@ -89,5 +93,35 @@ return require('packer').startup(function(use)
     use 'simrat39/rust-tools.nvim'
 
     use 'fei6409/log-highlight.nvim'
+
+
+-- For the AI and avante
+
+    -- Required for Avante 
+    use 'stevearc/dressing.nvim'
+    use 'MunifTanjim/nui.nvim'
+    use 'MeanderingProgrammer/render-markdown.nvim'
+
+    -- Optional dependencies   
+--    use 'HakonHarnes/img-clip.nvim'
+    use 'zbirenbaum/copilot.lua'
+    
+    -- Avante.nvim with build process
+    use {
+        'yetone/avante.nvim',
+        branch = 'main',
+        run = 'make',
+        config = function()
+            require('avante').setup()
+        end
+    }
+
+
+    use({ "kdheepak/lazygit.nvim",
+        -- optional for floating window border decoration
+        requires = {
+            "nvim-lua/plenary.nvim",
+        },
+    })
 
 end)

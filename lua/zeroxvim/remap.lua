@@ -34,3 +34,5 @@ vim.keymap.set("n", "<leader>lc", ":! pdflatex main.tex <CR><CR>")
 vim.keymap.set("n", "<leader>lv", ":! open main.pdf & disown <CR><CR>")
 
 
+-- LazyGit
+vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>")
