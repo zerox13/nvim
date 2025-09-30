@@ -1,7 +1,7 @@
 # nvim
 
 ## OBS 
-* Some remaps is made to work on mac. 
+* Some remaps are made to work on mac. 
   * leader lv will try to use "open" to launch pdfs
 
 ## Install
