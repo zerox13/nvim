@@ -28,6 +28,9 @@ vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
 
+-- Quickfix things
+vim.keymap.set("n", "<leader>j", "<cmd>cnext<CR>")
+vim.keymap.set("n", "<leader>k", "<cmd>cprev<CR>")
 
 -- LaTeX maps 
 vim.keymap.set("n", "<leader>lc", ":! pdflatex main.tex <CR><CR>")

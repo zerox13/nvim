@@ -37,6 +37,7 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.clipboard = "unnamed"
 
+vim.opt.winborder = "rounded"
 
 
 

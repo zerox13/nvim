@@ -1,4 +1,11 @@
--- Auther: Abdulsalam Aldahir 
--- GitHub: Zerox13
+require("core.lazy")
+require("core.lsp")
 
-require("zeroxvim")
+
+require("config.remap")
+require("config.options")
+--require("config.color")
+require("config.settings_functions")
+
+Disable_arrow_keys()
+
